@@ -1,0 +1,5 @@
+El service es la lógica del negocio y puede terner varios repositorys que acceden a los datos bajo la misma transacción. Administra los DAO que acceden a los datos, operacipones o consultas.
+
+Los generics pueden recibir cualquier tipo de objeto, mapa, hasmap, linked, se lo pasamos al cuerpo y se construye un json con lo que tengamos.
+
+Bajar el mariabd.com
