@@ -1,16 +1,8 @@
 package com.formacionbdi.microservicios.app.usuarios.services;
 
-import java.util.Optional;
-
 import com.formacionbdi.microservicios.app.usuarios.models.entity.Alumno;
+import com.formacionbdi.microservicios.commons.services.CommonService;
 
-public interface AlumnoService {
+public interface AlumnoService extends CommonService<Alumno> {
 
-	public Iterable<Alumno> findAll();
-	
-	public Optional<Alumno> findById(Long Id);
-	
-	public Alumno save(Alumno alumno);
-	
-	public void deleteById(Long Id);
 }
