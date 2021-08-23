@@ -3,3 +3,9 @@ El service es la lógica del negocio y puede terner varios repositorys que acced
 Los generics pueden recibir cualquier tipo de objeto, mapa, hasmap, linked, se lo pasamos al cuerpo y se construye un json con lo que tengamos.
 
 Bajar el mariabd.com
+
+Para levantar los servicios debe ser en el siguiente order
+	1.- Eureka
+	2.-Usuarios
+	3.-Cursos
+	4.-Zuul
