@@ -2,6 +2,7 @@ package com.formacionbdi.microservicios.app.usuarios.services;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -12,10 +13,14 @@ import com.formacionbdi.microservicios.commons.services.CommonServiceImpl;
 @Service
 public class AlumnoServiceImpl extends CommonServiceImpl<Alumno, AlumnoRepository> implements AlumnoService {
 
+	@Autowired
+	AlumnoRepository alumnoRepository;
+	
 	@Override
 	@Transactional(readOnly = true)
 	public List<Alumno> findByNombreOrApellido(String term) {
-		return findByNombreOrApellido(term);
+		return alumnoRepository.findByNombreOrApellido(term);
 	}
+
 
 }
