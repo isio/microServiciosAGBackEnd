@@ -1,12 +1,36 @@
 package com.formacionbdi.microservicios.app.examenes.services;
 
-import org.springframework.stereotype.Service;
+import java.util.List;
 
-import com.formacionbdi.microservicios.app.examenes.models.entity.Examen;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.formacionbdi.microservicios.app.examenes.models.repository.AsignaturaRepository;
 import com.formacionbdi.microservicios.app.examenes.models.repository.ExamenRepository;
+import com.formacionbdi.microservicios.commons.examenes.models.entity.Asignatura;
+import com.formacionbdi.microservicios.commons.examenes.models.entity.Examen;
 import com.formacionbdi.microservicios.commons.services.CommonServiceImpl;
 
 @Service
 public class ExamenServiceImpl extends CommonServiceImpl<Examen, ExamenRepository> implements ExamenService {
+
+	@Autowired
+	private ExamenRepository examenRepository;
+	
+	@Autowired
+	private AsignaturaRepository asignaturaRepository;
+	
+	@Override
+	@Transactional(readOnly = true)
+	public List<Examen> findByNombre(String term) {
+		return examenRepository.findByNombre(term);
+	}
+
+	@Override
+	@Transactional(readOnly = true)
+	public Iterable<Asignatura> findAllAsignaturas() {
+		return asignaturaRepository.findAll();
+	}
 
 }
