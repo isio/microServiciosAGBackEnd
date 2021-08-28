@@ -9,3 +9,29 @@ Para levantar los servicios debe ser en el siguiente order
 	2.-Usuarios
 	3.-Cursos
 	4.-Zuul
+
+INSERT INTO asignaturas (nombre, padre_id) VALUES ('Algebra', 1);
+INSERT INTO asignaturas (nombre, padre_id) VALUES ('Aritmética', 1);
+INSERT INTO asignaturas (nombre, padre_id) VALUES ('Trigonometría', 1);
+
+INSERT INTO asignaturas (nombre, padre_id) VALUES ('Lectura y Comprensión', 2);
+INSERT INTO asignaturas (nombre, padre_id) VALUES ('Verbos', 2);
+INSERT INTO asignaturas (nombre, padre_id) VALUES ('Gramática', 2);
+
+INSERT INTO asignaturas (nombre, padre_id) VALUES ('Inglés', 3);
+INSERT INTO asignaturas (nombre, padre_id) VALUES ('Gramática', 3);
+INSERT INTO asignaturas (nombre, padre_id) VALUES ('Verbos', 3);
+
+INSERT INTO asignaturas (nombre, padre_id) VALUES ('Ciencias Naturales', 4);
+INSERT INTO asignaturas (nombre, padre_id) VALUES ('Biología', 4);
+INSERT INTO asignaturas (nombre, padre_id) VALUES ('Física', 4);
+INSERT INTO asignaturas (nombre, padre_id) VALUES ('Química', 4);
+
+INSERT INTO asignaturas (nombre, padre_id) VALUES ('Historia', 5);
+INSERT INTO asignaturas (nombre, padre_id) VALUES ('Ciencias Sociales', 5);
+INSERT INTO asignaturas (nombre, padre_id) VALUES ('Filosofía', 5);
+
+INSERT INTO asignaturas (nombre, padre_id) VALUES ('Música', 6);
+INSERT INTO asignaturas (nombre, padre_id) VALUES ('Artes', 7);
+
+
