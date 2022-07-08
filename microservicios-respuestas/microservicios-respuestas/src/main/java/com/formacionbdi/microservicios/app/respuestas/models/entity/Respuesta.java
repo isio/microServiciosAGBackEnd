@@ -1,2 +1,0 @@
-package com.formacionbdi.microservicios.app.respuestas.models.entity;public class Respuesta {
-}

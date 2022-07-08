@@ -39,7 +39,7 @@ public class CommonServiceImpl<E, R extends PagingAndSortingRepository<E, Long>>
 	@Override
 	@Transactional(readOnly = true)
 	public Page<E> findAll(Pageable pageable) {
-		return findAll(pageable);
+		return alumnoRepository.findAll(pageable);
 	}
 
 }

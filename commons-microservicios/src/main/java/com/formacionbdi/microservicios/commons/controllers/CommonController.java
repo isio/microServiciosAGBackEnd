@@ -1,5 +1,6 @@
 package com.formacionbdi.microservicios.commons.controllers;
 
+import org.springframework.data.domain.Pageable;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
@@ -26,7 +27,12 @@ public class CommonController<E, S extends CommonService<E>> {
 	public ResponseEntity<?> listar(){
 		return ResponseEntity.ok().body(service.findAll());
 	}
-	
+
+	@GetMapping("/pagina")
+	public ResponseEntity<?> listar(Pageable pageable){
+		return ResponseEntity.ok().body(service.findAll(pageable));
+	}
+
 	@GetMapping("/{id}")
 	public ResponseEntity<?> ver(@PathVariable Long id){
 		Optional<E> o = service.findById(id);

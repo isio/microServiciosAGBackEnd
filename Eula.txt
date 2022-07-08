@@ -5,10 +5,15 @@ Los generics pueden recibir cualquier tipo de objeto, mapa, hasmap, linked, se l
 Bajar el mariabd.com
 
 Para levantar los servicios debe ser en el siguiente order
-	1.- Eureka
-	2.-Usuarios
-	3.-Cursos
-	4.-Zuul
+	1.- Eureka				Servidor de Nombres
+	2.- Cursos
+	3.- Examenes			Examenes se volvio a Mongo, dejo de ser indispensable en Base de Datos Relacionales
+	4.- Respuestas
+	5.- Usuarios
+	6.- Gateway				Puerta de Enlace
+
+
+La carpeta principal es usuarios que jalara a todos los demas subModulos
 
 INSERT INTO asignaturas (nombre, padre_id) VALUES ('Algebra', 1);
 INSERT INTO asignaturas (nombre, padre_id) VALUES ('Aritmética', 1);

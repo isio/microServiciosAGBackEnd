@@ -1,2 +1,0 @@
-package com.formacionbdi.microservicios.app.respuestas.clients;public interface ExamenFeignClient {
-}

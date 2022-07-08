@@ -17,11 +17,20 @@ public class ExamenServiceImpl extends CommonServiceImpl<Examen, ExamenRepositor
 
 	@Autowired
 	private ExamenRepository examenRepository;
-	
+
 	@Autowired
 	private AsignaturaRepository asignaturaRepository;
-	
-	@Override
+
+    public ExamenServiceImpl(AsignaturaRepository asignaturaRepository) {
+        this.asignaturaRepository = asignaturaRepository;
+    }
+
+    @Autowired
+    public ExamenServiceImpl(ExamenRepository examenRepository) {
+        this.examenRepository = examenRepository;
+    }
+
+    @Override
 	@Transactional(readOnly = true)
 	public List<Examen> findByNombre(String term) {
 		return examenRepository.findByNombre(term);
@@ -31,6 +40,12 @@ public class ExamenServiceImpl extends CommonServiceImpl<Examen, ExamenRepositor
 	@Transactional(readOnly = true)
 	public Iterable<Asignatura> findAllAsignaturas() {
 		return asignaturaRepository.findAll();
+	}
+
+	@Override
+	@Transactional(readOnly = true)
+	public Iterable<Long> findExamenesIdsConRespuestasByPreguntaIds(Iterable<Long> preguntaIds) {
+		return examenRepository.findExamenesIdsConRespuestasByPreguntaIds(preguntaIds);
 	}
 
 }

@@ -12,7 +12,8 @@ import java.util.stream.Collectors;
 @RestController
 public class RespuestaController {
 
-    private final RespuestaService respuestaService;
+    @Autowired
+    private RespuestaService respuestaService;
 
     public RespuestaController(RespuestaService respuestaService) {
         this.respuestaService = respuestaService;
