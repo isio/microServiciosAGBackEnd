@@ -1,0 +1,2 @@
+package com.formacionbdi.microservicios.app.cursos.models.entity;public class CursoAlumno {
+}
