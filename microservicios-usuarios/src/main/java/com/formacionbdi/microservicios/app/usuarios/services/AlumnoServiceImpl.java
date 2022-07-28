@@ -4,6 +4,8 @@ import java.util.List;
 
 import com.formacionbdi.microservicios.app.usuarios.client.CursoFeignClient;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -46,5 +48,17 @@ public class AlumnoServiceImpl extends CommonServiceImpl<Alumno, AlumnoRepositor
 	public void deleteById(Long Id) {
 		super.deleteById(Id);
 		this.eliminarCursoAlumnoPorId(Id);
+	}
+
+	@Override
+	@Transactional(readOnly = true)
+	public Iterable<Alumno> findAll() {
+		return alumnoRepository.findAllByOrderByIdAsc();
+	}
+
+	@Override
+	@Transactional(readOnly = true)
+	public Page<Alumno> findAll(Pageable pageable) {
+		return alumnoRepository.findAllByOrderByIdAsc(pageable);
 	}
 }

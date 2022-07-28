@@ -20,13 +20,13 @@ public class RespuestaController {
     }
 
     @PostMapping
-    public ResponseEntity<?> crear(@RequestBody Iterable<Respuesta> respuetas) {
-        respuetas = ((List<Respuesta>)respuetas).stream().map(r -> {
+    public ResponseEntity<?> crear(@RequestBody Iterable<Respuesta> respuestas) {
+        respuestas = ((List<Respuesta>)respuestas).stream().map(r -> {
             r.setAlumnoId(r.getAlumno().getId());
             r.setPreguntaId(r.getPregunta().getId());
             return r;
         }).collect(Collectors.toList());
-        Iterable<Respuesta> respuetasDb = respuestaService.saveAll(respuetas);
+        Iterable<Respuesta> respuetasDb = respuestaService.saveAll(respuestas);
         return ResponseEntity.status(HttpStatus.CREATED).body(respuetasDb);
     }
 
